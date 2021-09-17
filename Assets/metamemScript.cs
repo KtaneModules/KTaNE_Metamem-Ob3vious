@@ -94,8 +94,10 @@ public class metamemScript : MonoBehaviour
 		for (int i = 0; i < 3; i++)
 			memoryData.Add(Rnd.Range(0, 10));
 		Texts[0].text = memoryData[inputs].ToString();
-		for (int i = 0; i < 3; i++)
-			colourCodes[i] = Rnd.Range(0, 255);
+		do
+			for (int i = 0; i < 3; i++)
+				colourCodes[i] = Rnd.Range(0, 255);
+		while (colourCodes.All(x => x < 128));
 	}
 
 	void Update()
